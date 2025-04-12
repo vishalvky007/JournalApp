@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[AppName]</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="bg-primary transition-all duration-300 fixed top-0 left-0 right-0 w-full z-50 px-1 py-2"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-secondary font-bold text-xl">[AppName]</span>
+          </div>
+          <div class="flex items-center">
+            <div class="flex space-x-4">
+              <div class="flex gap-4">
+                <button
+                  id="login-btn"
+                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+                >
+                  Login
+                </button>
+                <button
+                  id="register-btn"
+                  class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md bg-secondary text-primary hover:bg-yellow-400 transition"
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div
+      id="login-modal"
+      class="modal fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-secondary text-primary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
+      >
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-semibold">Login to [AppName]</h3>
+          <button
+            class="modal-close text-input hover:text-black focus:outline-none"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="text-black"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+              placeholder="Enter you username"
+            />
+          </div>
+          <div>
+            <label for="password" class="block text-sm font-medium"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input
+                id="remember-me"
+                type="checkbox"
+                class="h-4 w-4 text-secondary focus:ring-secondary border-gray-300 rounded"
+              />
+              <label for="remember-me" class="ml-2 block text-sm"
+                >Remember me</label
+              >
+            </div>
+            <div class="text-sm">
+              <a href="#" class="font-medium text-secondary hover:text-white"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-primary-400 hover:to-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div
+      id="register-modal"
+      class="modal fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+    >
+      <div
+        class="bg-secondary text-primary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
+      >
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-lg font-semibold">Create an Account</h3>
+          <button
+            class="modal-close text-input hover:text-input focus:outline-none"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Register Form -->
+        <form class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="first-name" class="block text-sm font-medium"
+                >First name</label
+              >
+              <input
+                type="text"
+                id="first-name"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+                placeholder="Enter first name"
+              />
+            </div>
+            <div>
+              <label for="last-name" class="block text-sm font-medium"
+                >Last name</label
+              >
+              <input
+                type="text"
+                id="last-name"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+                placeholder="Enter last name"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="reg-email" class="block text-sm font-medium"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="reg-email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+              placeholder="Enter you email"
+            />
+          </div>
+          <div>
+            <label for="reg-password" class="block text-sm font-medium"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="reg-password"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div>
+            <label for="confirm-password" class="block text-sm font-medium"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
+              placeholder="Confirm your password"
+            />
+          </div>
+          <div class="flex items-center">
+            <input
+              id="terms"
+              type="checkbox"
+              class="h-4 w-4 text-secondary border-gray-300 rounded"
+            />
+            <label for="terms" class="ml-2 block text-sm"
+              >I agree to the
+              <a href="#" class="text-secondary hover:text-white"
+                >Terms of Service</a
+              >
+            </label>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <div class="relative bg-primary pt-20 overflow-hidden">
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div class="lg:flex lg:items-center lg:justify-between">
+          <!-- Left Content -->
+          <div class="lg:w-1/2">
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl"
+            >
+              Your Health, <br />
+              <span class="text-secondary">Reimagined</span>
+            </h1>
+            <p
+              class="mt-3 max-w-md mx-auto text-sm text-white sm:text-xl md:mt-5 md:max-w-3xl"
+            >
+              Track, improve, and celebrate your health journey with our
+              comprehensive wellness platform.
+            </p>
+            <div class="mt-10 sm:flex">
+              <div class="rounded-md shadow">
+                <button
+                  id="get-started-btn"
+                  type="button"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-primary bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                >
+                  Get Started
+                </button>
+              </div>
+              <div class="mt-3 sm:mt-0 sm:ml-3">
+                <button
+                  type="button"
+                  onclick="scrollToWithOffset('features', 130)"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-black bg-secondary bg-opacity-80 hover:bg-opacity-90 md:py-4 md:text-lg md:px-10"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Image -->
+          <div class="mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
+            <img
+              src="../static/hero-image.png"
+              alt="Health App Illustration"
+              class="w-full max-w-md"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#1A73E9"
+        fill-opacity="1"
+        d="M0,128L80,144C160,160,320,192,480,192C640,192,800,160,960,144C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+      ></path>
+    </svg>
+
+    <!-- Features Section -->
+    <div id="features" class="py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Your Wellness Journey Starts Here
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+            Discover the key features that make VitaTrack your perfect health
+            companion.
+          </p>
+        </div>
+
+        <div
+          class="mt-16 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- Feature 1: Chatbot -->
+          <a href="#" class="feature-card group">
+            <div
+              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-pink-200 hover:border-pink-400"
+            >
+              <div class="p-6">
+                <div
+                  class="bg-pink-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto"
+                >
+                  <svg
+                    class="h-8 w-8 text-pink-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">
+                  [Chatbot]
+                </h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+              </div>
+              <div
+                class="bg-gradient-to-r from-pink-50 to-pink-100 p-4 text-center"
+              >
+                <img
+                  src="/api/placeholder/300/200"
+                  alt="[chatbot]"
+                  class="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </a>
+
+          <!-- Feature 2: Journal -->
+          <a href="./journal.html" class="feature-card group">
+            <div
+              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-purple-200 hover:border-purple-400"
+            >
+              <div class="p-6">
+                <div
+                  class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto"
+                >
+                  <svg
+                    class="h-8 w-8 text-purple-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">
+                  [Journal]
+                </h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </p>
+              </div>
+              <div
+                class="bg-gradient-to-r from-purple-50 to-purple-100 p-4 text-center"
+              >
+                <img
+                  src="/api/placeholder/300/200"
+                  alt="[journal]"
+                  class="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </a>
+
+          <!-- Feature 3: Journal -->
+          <a href="#" class="feature-card group">
+            <div
+              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-blue-200 hover:border-blue-400"
+            >
+              <div class="p-6">
+                <div
+                  class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto"
+                >
+                  <svg
+                    class="h-8 w-8 text-blue-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">
+                  Sleep Analysis
+                </h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                  Track your sleep patterns and get insights to improve your
+                  rest quality.
+                </p>
+              </div>
+              <div
+                class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 text-center"
+              >
+                <img
+                  src="/api/placeholder/300/200"
+                  alt="Sleep Analysis"
+                  class="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </a>
+
+          <!-- Feature 4: Form for Questions -->
+          <a href="./questions.html" class="feature-card group">
+            <div
+              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-green-200 hover:border-green-400"
+            >
+              <div class="p-6">
+                <div
+                  class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto"
+                >
+                  <svg
+                    class="h-8 w-8 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">
+                  [Questions]
+                </h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+              </div>
+              <div
+                class="bg-gradient-to-r from-green-50 to-green-100 p-4 text-center"
+              >
+                <img
+                  src="/api/placeholder/300/200"
+                  alt="questions"
+                  class="mx-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#1A73E9"
+        fill-opacity="1"
+        d="M0,128L80,144C160,160,320,192,480,192C640,192,800,160,960,144C1120,128,1280,128,1360,128L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+      ></path>
+    </svg>
+    <!-- Footer -->
+    <footer class="flex flex-col justify-center bg-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-secondary">[AppName]</h3>
+            <p class="text-gray-300 text-sm">
+              Your comprehensive health and wellness companion for a better
+              life.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-secondary">Company</h3>
+            <ul class="space-y-2 text-gray-300 text-sm">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-secondary">Resources</h3>
+            <ul class="space-y-2 text-gray-300 text-sm">
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4 text-secondary">Connect</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white">
+                <span class="sr-only">Facebook</span>
+                <!-- Facebook Icon -->
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white">
+                <span class="sr-only">Instagram</span>
+                <!-- Instagram Icon -->
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white">
+                <span class="sr-only">Twitter</span>
+                <!-- Twitter Icon -->
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-100"
+        >
+          <p>&copy; [AppName]. All rights reserved. 2025</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/script.js"></script>
+  </body>
+</html>

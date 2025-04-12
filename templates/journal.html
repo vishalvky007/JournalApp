@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white text-primary pt-20">
+    <!-- Navbar -->
+    <nav class="bg-primary fixed top-0 left-0 right-0 w-full z-50 px-4 py-2 shadow-md">
+      <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
+        <span class="text-secondary font-bold text-xl">[AppName]</span>
+        <a
+          id="login-btn"
+          class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md border-2 border-secondary text-secondary hover:bg-secondary hover:text-primary transition"
+          href="./index.html"
+        >
+          Back to Home
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <section class="py-24 sm:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="max-w-2xl mx-auto lg:mx-0">
+            <h2 class="text-4xl pt-10 font-semibold tracking-tight text-primary sm:text-3xl">
+              My Journal Entries
+            </h2>
+          </div>
+
+          <!-- Card Section -->
+          <div class="grid grid-cols-1 gap-6 pt-10 sm:mt-16 sm:pt-16 lg:grid-cols-3">
+            <!-- Cards Container -->
+            <div class="rounded-lg p-4 shadow-sm overflow-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 space-y-4">
+              <!-- Day Cards -->
+              <div
+                class="journal-card p-4 rounded-lg bg-primary text-secondary transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                onclick="showEntryModal('Day 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, cupiditate')"
+              >
+                <h3 class="font-bold text-2xl">Day 1</h3>
+                <p class="text-secondary text-sm">April 10, 2025</p>
+                <p class="text-gray-100 mt-2 line-clamp-2">
+                  Today was my first day trying to establish a new morning routine...
+                </p>
+              </div>
+
+              <!-- Repeat Day Cards if needed -->
+              <!-- ... -->
+
+              <!-- Add New Button -->
+              <div class="flex justify-center pt-4">
+                <button
+                  type="button"
+                  onclick="document.getElementById('addNewModal').classList.remove('hidden')"
+                  class="bg-primary text-secondary px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition hover:scale-105 font-semibold"
+                >
+                  + Add New
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Add Entry Modal -->
+    <div
+      id="addNewModal"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md">
+        <h2 class="text-xl font-bold mb-4">Add New Entry</h2>
+
+        <textarea
+          placeholder="Type your journal entry..."
+          rows="4"
+          class="w-full border border-gray-300 rounded px-4 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+        ></textarea>
+
+        <button
+          type="button"
+          class="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded text-sm font-medium mb-4"
+        >
+          🎤 Use Microphone
+        </button>
+
+        <div class="flex justify-end gap-2">
+          <button
+            type="button"
+            onclick="document.getElementById('addNewModal').classList.add('hidden')"
+            class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 text-sm font-medium"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 rounded bg-primary text-secondary hover:opacity-90 text-sm font-medium"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entry View Modal -->
+    <div
+      id="entryViewModal"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 id="entryTitle" class="text-xl font-bold">Entry Title</h2>
+          <button
+            type="button"
+            onclick="document.getElementById('entryViewModal').classList.add('hidden')"
+            class="text-gray-500 hover:text-gray-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="border-t pt-4">
+          <p id="entryContent" class="text-gray-700">
+            Entry content will appear here...
+          </p>
+        </div>
+
+        <div class="flex justify-end mt-6 gap-2">
+          <button
+            type="button"
+            class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-sm font-medium"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('entryViewModal').classList.add('hidden')"
+            class="px-4 py-2 rounded bg-primary text-secondary hover:opacity-90 text-sm font-medium"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showEntryModal(title, content) {
+        document.getElementById("entryTitle").textContent = title;
+        document.getElementById("entryContent").textContent = content;
+        document.getElementById("entryViewModal").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
