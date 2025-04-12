@@ -81,6 +81,7 @@
     --default-mono-font-family: var(--font-mono);
     --color-primary: #1A73E9;
     --color-secondary: #ffffff;
+    --color-input: #0d1117;
   }
 }
 @layer base {

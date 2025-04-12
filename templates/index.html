@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>[AppName]</title>
-    <link href="./output.css" rel="stylesheet" />
+    <link href="../styles/output.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-50">
     <!-- Navbar -->
@@ -22,7 +22,7 @@
               <div class="flex gap-4">
                 <button
                   id="login-btn"
-                  class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md border-2 border-secondary text-secondary hover:bg-secondary hover:text-primary transition"
+                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
                 >
                   Login
                 </button>
@@ -45,17 +45,17 @@
       class="modal fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-primary text-secondary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
+        class="bg-secondary text-primary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-lg font-semibold">Login to [AppName]</h3>
           <button
-            class="modal-close text-secondary hover:text-white focus:outline-none"
+            class="modal-close text-input hover:text-black focus:outline-none"
           >
             <svg
               class="h-6 w-6"
-              fill="none"
+              fill="text-black"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
@@ -76,7 +76,7 @@
             <input
               type="email"
               id="email"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
               placeholder="Enter you username"
             />
           </div>
@@ -87,7 +87,7 @@
             <input
               type="password"
               id="password"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
               placeholder="Enter your password"
             />
           </div>
@@ -111,7 +111,7 @@
           <div>
             <button
               type="submit"
-              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary bg-gradient-to-r from-secondary to-yellow-400 hover:from-yellow-400 hover:to-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-primary-400 hover:to-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
             >
               Sign in
             </button>
@@ -126,13 +126,13 @@
       class="modal fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden"
     >
       <div
-        class="bg-primary text-secondary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
+        class="bg-secondary text-primary rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-6"
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-lg font-semibold">Create an Account</h3>
           <button
-            class="modal-close text-secondary hover:text-white focus:outline-none"
+            class="modal-close text-input hover:text-input focus:outline-none"
           >
             <svg
               class="h-6 w-6"
@@ -160,7 +160,7 @@
               <input
                 type="text"
                 id="first-name"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
                 placeholder="Enter first name"
               />
             </div>
@@ -171,7 +171,7 @@
               <input
                 type="text"
                 id="last-name"
-                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
                 placeholder="Enter last name"
               />
             </div>
@@ -183,7 +183,7 @@
             <input
               type="email"
               id="reg-email"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
               placeholder="Enter you email"
             />
           </div>
@@ -194,7 +194,7 @@
             <input
               type="password"
               id="reg-password"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
               placeholder="Enter your password"
             />
           </div>
@@ -205,7 +205,7 @@
             <input
               type="password"
               id="confirm-password"
-              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-white"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary text-input"
               placeholder="Confirm your password"
             />
           </div>
@@ -225,7 +225,7 @@
           <div>
             <button
               type="submit"
-              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-yellow-400 hover:from-yellow-400 hover:to-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
             >
               Create Account
             </button>
@@ -278,7 +278,7 @@
           <!-- Right Image -->
           <div class="mt-10 lg:mt-0 lg:w-1/2 flex justify-center">
             <img
-              src="./images/hero-section-removebg-preview.png"
+              src="../static/hero-image.png"
               alt="Health App Illustration"
               class="w-full max-w-md"
             />
@@ -353,7 +353,7 @@
           </a>
 
           <!-- Feature 2: Journal -->
-          <a href="./pages/journal.html" class="feature-card group">
+          <a href="./journal.html" class="feature-card group">
             <div
               class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-purple-200 hover:border-purple-400"
             >
@@ -438,7 +438,7 @@
           </a>
 
           <!-- Feature 4: Form for Questions -->
-          <a href="./pages/questions.html" class="feature-card group">
+          <a href="./questions.html" class="feature-card group">
             <div
               class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-green-200 hover:border-green-400"
             >
@@ -554,13 +554,13 @@
           </div>
         </div>
         <div
-          class="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-400"
+          class="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-100"
         >
           <p>&copy; [AppName]. All rights reserved. 2025</p>
         </div>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../static/script.js"></script>
   </body>
 </html>
