@@ -10,35 +10,36 @@
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="bg-primary transition-all duration-300 fixed top-0 left-0 right-0 w-full z-50 px-1 py-2"
+      class="transition-all duration-300 fixed top-0 left-0 right-0 w-full z-50 px-4 py-2 bg-primary "
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex-shrink-0 flex items-center">
-            <span class="text-secondary font-bold text-xl">[AppName]</span>
-          </div>
-          <div class="flex items-center">
-            <div class="flex space-x-4">
-              <div class="flex gap-4">
-                <button
-                  id="login-btn"
-                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-md font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
-                >
-                  Login
-                </button>
-                <button
-                  id="register-btn"
-                  class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md bg-secondary text-primary hover:bg-yellow-400 transition"
-                >
-                  Register
-                </button>
-              </div>
-            </div>
+        <div class="flex justify-between h-16 items-center">
+          <!-- Brand -->
+          <span
+            id="logoText"
+            class="text-secondary font-bold text-xl transition-colors duration-300"
+          >
+            [AppName]
+          </span>
+
+          <!-- Buttons -->
+          <div class="flex gap-4">
+            <button
+              id="login-btn"
+              class="transition-colors duration-300 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-md font-semibold bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary"
+            >
+              Login
+            </button>
+            <button
+              id="register-btn"
+              class="transition-colors duration-300 px-6 py-2 rounded-md font-semibold text-md bg-secondary text-primary hover:bg-yellow-400"
+            >
+              Register
+            </button>
           </div>
         </div>
       </div>
     </nav>
-
     <!-- Login Modal -->
     <div
       id="login-modal"
@@ -488,11 +489,11 @@
       class="modal fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden transition-opacity duration-300 ease-out opacity-0"
     >
       <div
-        class="bg-secondary text-primary rounded-lg overflow-hidden shadow-xl transform transition-all duration-300 ease-out scale-95 opacity-0 p-6 flex flex-col h-[80vh]"
+        class="bg-secondary text-primary rounded-lg shadow-xl transform transition-all duration-300 ease-out scale-95 opacity-0 p-6 flex flex-col h-[80vh]"
       >
         <!-- Modal Header -->
-        <div class="flex justify-between items-center mb-4 flex-shrink-0">
-          <h3 class="text-lg font-semibold">Chat with [Chatbot]</h3>
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Ask your Query!</h3>
           <button
             class="modal-close text-input hover:text-black focus:outline-none transition-colors duration-200"
             onclick="toggleModal('chatbot-modal')"
@@ -514,37 +515,58 @@
         </div>
 
         <!-- Chat Interface -->
-        <div class="flex flex-grow h-[60vh] overflow-hidden">
+        <div class="flex flex-grow h-[60vh]">
           <!-- Chat History Sidebar -->
           <div
-            class="w-1/3 border-r border-gray-300 overflow-y-auto bg-gray-100 p-6"
+            class="w-1/3 border-r border-gray-300 overflow-y-auto bg-gray-100 p-2"
           >
-            <div class="pr-4">
+            <div class="px-4">
               <h4 class="font-semibold text-primary text-lg mb-4">
-          Chat History
+                Chat History
               </h4>
-              <div class="space-y-4" id="chat-history-container">
-          <div
-            class="p-4 rounded-lg bg-secondary text-primary text-sm cursor-pointer hover:bg-yellow-300 shadow-md chat-history-item"
-            data-chat-id="sleep-tracking"
-          >
-            <p class="font-medium">Sleep tracking help</p>
-            <p class="text-xs truncate">Today, 10:35 AM</p>
-          </div>
-          <div
-            class="p-4 rounded-lg bg-gray-200 text-primary text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
-            data-chat-id="diet-recommendations"
-          >
-            <p class="font-medium">Diet recommendations</p>
-            <p class="text-xs truncate">Yesterday, 2:15 PM</p>
-          </div>
-          <div
-            class="p-4 rounded-lg bg-gray-200 text-primary text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
-            data-chat-id="exercise-routine"
-          >
-            <p class="font-medium">Exercise routine</p>
-            <p class="text-xs truncate">Jun 15, 8:22 AM</p>
-          </div>
+              <div class="space-y-2" id="chat-history-container">
+                <div
+                  class="p-4 rounded-lg bg-secondary text-black text-sm cursor-pointer hover:bg-yellow-300 shadow-md chat-history-item"
+                  data-chat-id="sleep-tracking"
+                >
+                  <p class="font-medium">Sleep tracking help</p>
+                  <p class="text-xs truncate">Today, 10:35 AM</p>
+                </div>
+                <div
+                  class="p-4 rounded-lg bg-gray-200 text-black text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
+                  data-chat-id="diet-recommendations"
+                >
+                  <p class="font-medium">Diet recommendations</p>
+                  <p class="text-xs truncate">Yesterday, 2:15 PM</p>
+                </div>
+                <div
+                  class="p-4 rounded-lg bg-gray-200 text-black text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
+                  data-chat-id="exercise-routine"
+                >
+                  <p class="font-medium">Exercise routine</p>
+                  <p class="text-xs truncate">Jun 15, 8:22 AM</p>
+                </div>
+                <div
+                  class="p-4 rounded-lg bg-secondary text-black text-sm cursor-pointer hover:bg-yellow-300 shadow-md chat-history-item"
+                  data-chat-id="sleep-tracking"
+                >
+                  <p class="font-medium">Sleep tracking help</p>
+                  <p class="text-xs truncate">Today, 10:35 AM</p>
+                </div>
+                <div
+                  class="p-4 rounded-lg bg-gray-200 text-black text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
+                  data-chat-id="diet-recommendations"
+                >
+                  <p class="font-medium">Diet recommendations</p>
+                  <p class="text-xs truncate">Yesterday, 2:15 PM</p>
+                </div>
+                <div
+                  class="p-4 rounded-lg bg-gray-200 text-black text-sm cursor-pointer hover:bg-gray-300 shadow-md chat-history-item"
+                  data-chat-id="exercise-routine"
+                >
+                  <p class="font-medium">Exercise routine</p>
+                  <p class="text-xs truncate">Jun 15, 8:22 AM</p>
+                </div>
               </div>
             </div>
           </div>
@@ -582,7 +604,7 @@
             aria-label="Use Microphone"
           >
             <svg
-              class="h-6 w-6"
+              class="6 w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -595,8 +617,91 @@
               ></path>
             </svg>
           </button>
-    
         </div>
+
+        <!-- Speech Recognition Script -->
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const micBtn = document.getElementById("mic-btn");
+            const chatInput = document.getElementById("chat-input");
+
+            // Check if browser supports speech recognition
+            if (
+              "webkitSpeechRecognition" in window ||
+              "SpeechRecognition" in window
+            ) {
+              const SpeechRecognition =
+                window.SpeechRecognition || window.webkitSpeechRecognition;
+              const recognition = new SpeechRecognition();
+
+              recognition.continuous = false;
+              recognition.interimResults = true;
+              recognition.lang = "en-US";
+
+              let isListening = false;
+
+              micBtn.addEventListener("click", () => {
+                if (!isListening) {
+                  // Start listening
+                  recognition.start();
+                  isListening = true;
+                  micBtn.classList.add("bg-secondary");
+                  chatInput.placeholder = "Listening...";
+                } else {
+                  // Stop listening
+                  recognition.stop();
+                  isListening = false;
+                  micBtn.classList.remove("bg-secondary");
+                  chatInput.placeholder = "Type your query...";
+                }
+              });
+
+              // Process speech results
+              recognition.onresult = (event) => {
+                const transcript = Array.from(event.results)
+                  .map((result) => result[0])
+                  .map((result) => result.transcript)
+                  .join("");
+
+                chatInput.value = transcript;
+
+                // If final result
+                if (event.results[0].isFinal) {
+                  // Delay sending to allow user to see what was transcribed
+                  setTimeout(() => {
+                    sendMessage();
+                    recognition.stop();
+                    isListening = false;
+                    micBtn.classList.remove("bg-secondary");
+                    chatInput.placeholder = "Type your query...";
+                  }, 1000);
+                }
+              };
+
+              // Handle errors
+              recognition.onerror = (event) => {
+                console.error("Speech recognition error", event.error);
+                isListening = false;
+                micBtn.classList.remove("bg-secondary");
+                chatInput.placeholder = "Type your query...";
+              };
+
+              recognition.onend = () => {
+                isListening = false;
+                micBtn.classList.remove("bg-secondary");
+                chatInput.placeholder = "Type your query...";
+              };
+            } else {
+              // Browser doesn't support speech recognition
+              micBtn.addEventListener("click", () => {
+                alert(
+                  "Speech recognition is not supported in your browser. Please try Chrome, Edge, or Safari."
+                );
+              });
+              micBtn.classList.add("opacity-50");
+            }
+          });
+        </script>
       </div>
     </div>
 
@@ -682,6 +787,35 @@
     </footer>
 
     <script src="../static/script.js"></script>
-
+    <!-- Scroll Effect Script -->
+    <!-- <script>
+      const navbar = document.getElementById("navbar");
+      const logoText = document.getElementById("logoText");
+      const loginBtn = document.getElementById("login-btn");
+      const registerBtn = document.getElementById("register-btn");
+    
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.classList.remove("bg-primary");
+          navbar.classList.add("bg-white/10", "filter:blur(var(--blur-sm));", "shadow-md");
+    
+          logoText.classList.remove("text-secondary");
+          logoText.classList.add("text-black");
+    
+          loginBtn.classList.add("text-black");
+          registerBtn.classList.add("text-black");
+        } else {
+          navbar.classList.remove("bg-white/10", "blur-sm", "shadow-md");
+          navbar.classList.add("bg-primary");
+    
+          logoText.classList.remove("text-black");
+          logoText.classList.add("text-secondary");
+    
+          loginBtn.classList.remove("text-black");
+          registerBtn.classList.remove("text-black");
+        }
+      });
+    </script> -->
+    
   </body>
 </html>
