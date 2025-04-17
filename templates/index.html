@@ -3,37 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[AppName]</title>
+    <title>ADHDGuru</title>
     <link href="../styles/output.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-50">
     <!-- Navbar -->
     <nav
       id="navbar"
-      class="bg-primary transition-all duration-300 fixed top-0 left-0 right-0 w-full z-50 px-1 py-2"
+      class="transition-all duration-300 fixed top-0 left-0 right-0 w-full z-50 px-4 py-2 bg-primary"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex-shrink-0 flex items-center">
-            <span class="text-secondary font-bold text-xl">[AppName]</span>
-          </div>
-          <div class="flex items-center">
-            <div class="flex space-x-4">
-              <div class="flex gap-4">
-                <button
-                  id="login-btn"
-                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-primary bg-gradient-to-r from-secondary to-blue-100 hover:from-blue-400 hover:to-primary focus:outline-black focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
-                >
-                  Login
-                </button>
-                <button
-                  id="register-btn"
-                  class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md bg-secondary text-primary hover:bg-yellow-400 transition"
-                >
-                  Register
-                </button>
-              </div>
-            </div>
+        <div class="flex justify-between h-16 items-center">
+          <!-- Brand -->
+          <span
+            id="logoText"
+            class="text-secondary font-bold text-2xl transition-colors duration-300"
+          >
+            ADHDGuru
+          </span>
+
+          <!-- Buttons -->
+          <div class="flex gap-4">
+            <button
+              id="login-btn"
+              class="transition-colors duration-300 px-6 py-2 rounded-md font-semibold text-md bg-secondary text-black hover:bg-myyellow hover:text-black cursor-pointer shadow-lg"
+            >
+              Login
+            </button>
+            <button
+              id="register-btn"
+              class="transition-colors duration-300 px-6 py-2 rounded-md font-semibold text-md bg-secondary text-black hover:bg-myyellow hover:text-black cursor-pointer shadow-lg"
+            >
+              Register
+            </button>
           </div>
         </div>
       </div>
@@ -49,7 +51,7 @@
       >
         <!-- Modal Header -->
         <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-semibold">Login to [AppName]</h3>
+          <h3 class="text-lg font-semibold">Login to ADHDGuru</h3>
           <button
             class="modal-close text-input hover:text-black focus:outline-none"
           >
@@ -136,7 +138,7 @@
           >
             <svg
               class="h-6 w-6"
-              fill="none"
+              fill="currentColor"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
@@ -258,7 +260,7 @@
                 <button
                   id="get-started-btn"
                   type="button"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-primary bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-black bg-secondary bg-opacity-80 hover:bg-opacity-90 hover:bg-myyellow hover:text-black md:py-4 md:text-lg md:px-10 shadow-lg cursor-pointer"
                 >
                   Get Started
                 </button>
@@ -267,7 +269,7 @@
                 <button
                   type="button"
                   onclick="scrollToWithOffset('features', 130)"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-black bg-secondary bg-opacity-80 hover:bg-opacity-90 md:py-4 md:text-lg md:px-10"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-md text-black bg-secondary bg-opacity-80 hover:bg-opacity-90 hover:bg-myyellow hover:text-black md:py-4 md:text-lg md:px-10 shadow-lg cursor-pointer"
                 >
                   Learn More
                 </button>
@@ -286,16 +288,305 @@
         </div>
       </div>
     </div>
+
+    <!-- wave-design -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
-        fill="#1A73E9"
+        fill="#312C85"
         fill-opacity="1"
         d="M0,128L80,144C160,160,320,192,480,192C640,192,800,160,960,144C1120,128,1280,128,1360,128L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
       ></path>
     </svg>
 
+    <!-- About Section Header -->
+    <div class="text-center mx-auto mb-10">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        About Us
+      </h2>
+      <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+        Your AI companion for navigating ADHD and autism challenges with
+        personalized support and strategies.
+      </p>
+    </div>
+
+    <!-- About Cards Section -->
+    <div class="container mx-auto px-4 pb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <div class="h-48 w-full overflow-hidden">
+            <img
+              src="../static/chatbot.gif"
+              alt="AI-Powered Support"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">
+              AI-Powered Support
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Advanced AI technology providing personalized guidance and
+              self-diagnosis assistance for ADHD and autism-related challenges.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <div class="h-48 w-full overflow-hidden">
+            <img
+              src="../static/roles-responsiblities.png"
+              alt="Role-Based Adaptation"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">
+              Role-Based Adaptation
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Tailored strategies for adults with ADHD/autism, parents,
+              teachers, and employers, offering specific accommodations and
+              support.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <div class="h-48 w-full overflow-hidden">
+            <img
+              src="../static/multilingual-support.jpg"
+              alt="Multilingual Support"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">
+              Multilingual Support
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Available in English and major Indian languages including Hindi,
+              Bengali, Marathi, Tamil, Telugu, and Malayalam.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <div class="h-48 w-full overflow-hidden">
+            <img
+              src="../static/empathy-in-customer-service.png.webp"
+              alt="Empathetic Interaction"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-indigo-900 mb-2">
+              Empathetic Interaction
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Using sentiment analysis and tone adaptation for counselor-like
+              conversations that help navigate daily challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Information Section -->
+    <div class="bg-white pt-12 pb-20 overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-4xl text-center font-bold text-indigo-900 mb-12 animate-fade-in-down"
+          >
+            How ADHDGuru Helps?
+          </h2>
+
+          <!-- Animated cards container -->
+          <div class="space-y-8">
+            <!-- Card 1 - Slides in from left -->
+            <div
+              class="bg-gradient-to-r from-indigo-50 to-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-slide-in-left"
+            >
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-600 rounded-full p-3 mr-4 text-white flex-shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-indigo-800 mb-3">
+                    Personalized Support
+                  </h3>
+                  <p class="text-gray-700">
+                    ADHDGuru provides tailored guidance for managing task
+                    organization, time management, focus improvement, emotional
+                    regulation, and social communication skills—all common
+                    challenges for individuals with ADHD and autism.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 - Slides in from right -->
+            <div
+              class="bg-gradient-to-l from-indigo-50 to-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-slide-in-right"
+            >
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-600 rounded-full p-3 mr-4 text-white flex-shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-indigo-800 mb-3">
+                    Multimodal Interaction
+                  </h3>
+                  <p class="text-gray-700">
+                    Flexible text and voice-based interactions make ADHDGuru
+                    accessible for different preferences and needs, allowing
+                    users to communicate in whatever way feels most comfortable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 - Slides up from bottom -->
+            <div
+              class="bg-gradient-to-r from-indigo-50 to-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-slide-in-up"
+            >
+              <div class="flex items-start">
+                <div
+                  class="bg-indigo-600 rounded-full p-3 mr-4 text-white flex-shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-indigo-800 mb-3">
+                    Community Support
+                  </h3>
+                  <p class="text-gray-700">
+                    Beyond individual guidance, ADHDGuru helps create
+                    understanding among caregivers, educators, and employers,
+                    fostering more inclusive and supportive environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section with Parallax Effect -->
+    <div class="relative bg-indigo-900 text-white py-20 overflow-hidden">
+      <!-- Fixed Background Image for Parallax Effect -->
+      <div
+        class="absolute inset-0 bg-fixed"
+        style="
+          background-image: url('../static/adhd_banner.jpg');
+          background-size: contain;
+          background-position: center;
+          opacity: 0.3;
+          z-index: 0;
+        "
+      ></div>
+
+      <!-- Decorative Elements -->
+      <!-- <div class="absolute inset-0 z-10">
+        <div
+          class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-indigo-900 to-transparent"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-indigo-900 to-transparent"
+        ></div>
+        <div
+          class="absolute top-10 left-10 w-32 h-32 rounded-full bg-indigo-600 opacity-20 blur-xl"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-indigo-500 opacity-20 blur-xl"
+        ></div>
+      </div> -->
+
+      <!-- Content -->
+      <div class="container mx-auto px-4 text-center relative z-20">
+        <h2 class="text-4xl font-bold mb-6">
+          Start Your Journey With ADHDGuru
+        </h2>
+        <div class="w-24 h-1 bg-indigo-300 mx-auto mb-8"></div>
+        <p class="text-lg text-indigo-200 mb-10 max-w-2xl mx-auto">
+          Get personalized guidance and support for ADHD and autism challenges,
+          available anytime and anywhere you need it.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+        >
+          <button
+            class="bg-white text-indigo-900 px-8 py-4 rounded-lg font-bold hover:bg-indigo-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Try For Free
+          </button>
+          <button
+            class="border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Features Section -->
-    <div id="features" class="py-8">
+    <div id="features" class="mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -311,9 +602,14 @@
           class="mt-16 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           <!-- Feature 1: Chatbot -->
-          <a href="#" class="feature-card group">
+          <a
+            href="https://huggingface.co/spaces/hdsharma/ADHDGuru-Chatbot"
+            class="feature-card group"
+            alt="Chatbot"
+            target="_blank"
+          >
             <div
-              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-pink-200 hover:border-pink-400"
+              class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-pink-200 hover:border-pink-400"
             >
               <div class="p-6">
                 <div
@@ -340,22 +636,13 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
               </div>
-              <div
-                class="bg-gradient-to-r from-pink-50 to-pink-100 p-4 text-center"
-              >
-                <img
-                  src="/api/placeholder/300/200"
-                  alt="[chatbot]"
-                  class="mx-auto rounded-lg"
-                />
-              </div>
             </div>
           </a>
 
           <!-- Feature 2: Journal -->
           <a href="./journal.html" class="feature-card group">
             <div
-              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-purple-200 hover:border-purple-400"
+              class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-purple-200 hover:border-purple-400"
             >
               <div class="p-6">
                 <div
@@ -382,22 +669,13 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
               </div>
-              <div
-                class="bg-gradient-to-r from-purple-50 to-purple-100 p-4 text-center"
-              >
-                <img
-                  src="/api/placeholder/300/200"
-                  alt="[journal]"
-                  class="mx-auto rounded-lg"
-                />
-              </div>
             </div>
           </a>
 
           <!-- Feature 3: Journal -->
           <a href="#" class="feature-card group">
             <div
-              class="bg-white rounded-2xl shadow-lg overflow-hidden h-full border-2 border-blue-200 hover:border-blue-400"
+              class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-blue-200 hover:border-blue-400"
             >
               <div class="p-6">
                 <div
@@ -418,21 +696,11 @@
                   </svg>
                 </div>
                 <h3 class="mt-4 text-lg font-medium text-gray-900 text-center">
-                  Sleep Analysis
+                  [lorem ipsum]
                 </h3>
                 <p class="mt-2 text-base text-gray-500 text-center">
-                  Track your sleep patterns and get insights to improve your
-                  rest quality.
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
                 </p>
-              </div>
-              <div
-                class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 text-center"
-              >
-                <img
-                  src="/api/placeholder/300/200"
-                  alt="Sleep Analysis"
-                  class="mx-auto rounded-lg"
-                />
               </div>
             </div>
           </a>
@@ -467,34 +735,35 @@
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </div>
-              <div
-                class="bg-gradient-to-r from-green-50 to-green-100 p-4 text-center"
-              >
-                <img
-                  src="/api/placeholder/300/200"
-                  alt="questions"
-                  class="mx-auto rounded-lg"
-                />
-              </div>
             </div>
           </a>
         </div>
       </div>
+      <!-- Learn More Button -->
+      <!-- <div class="mt-12 text-center">
+        <button
+          class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 transform hover:scale-105 animate-pulse"
+        >
+          Learn More About Our Approach
+        </button>
+      </div> -->
     </div>
 
+    <!--- Wave svg-->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
-        fill="#1A73E9"
+        fill="#312C85"
         fill-opacity="1"
         d="M0,128L80,144C160,160,320,192,480,192C640,192,800,160,960,144C1120,128,1280,128,1360,128L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
       ></path>
     </svg>
+
     <!-- Footer -->
-    <footer class="flex flex-col justify-center bg-primary text-white">
+    <footer class="flex flex-col justify-center bg-primary text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4 text-secondary">[AppName]</h3>
+            <h3 class="text-lg font-semibold mb-4 text-secondary">ADHDGuru</h3>
             <p class="text-gray-300 text-sm">
               Your comprehensive health and wellness companion for a better
               life.
@@ -556,11 +825,41 @@
         <div
           class="border-t border-gray-700 mt-8 py-4 text-center text-sm text-gray-100"
         >
-          <p>&copy; [AppName]. All rights reserved. 2025</p>
+          <p>&copy; ADHDGuru. All rights reserved. 2025</p>
         </div>
       </div>
     </footer>
 
     <script src="../static/script.js"></script>
+    <!-- Scroll Effect Script -->
+    <!-- <script>
+      const navbar = document.getElementById("navbar");
+      const logoText = document.getElementById("logoText");
+      const loginBtn = document.getElementById("login-btn");
+      const registerBtn = document.getElementById("register-btn");
+    
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.classList.remove("bg-primary");
+          navbar.classList.add("bg-white/10", "filter:blur(var(--blur-sm));", "shadow-md");
+    
+          logoText.classList.remove("text-secondary");
+          logoText.classList.add("text-black");
+    
+          loginBtn.classList.add("text-black");
+          registerBtn.classList.add("text-black");
+        } else {
+          navbar.classList.remove("bg-white/10", "blur-sm", "shadow-md");
+          navbar.classList.add("bg-primary");
+    
+          logoText.classList.remove("text-black");
+          logoText.classList.add("text-secondary");
+    
+          loginBtn.classList.remove("text-black");
+          registerBtn.classList.remove("text-black");
+        }
+      });
+    </script> -->
+    
   </body>
 </html>
