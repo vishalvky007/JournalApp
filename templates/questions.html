@@ -65,7 +65,8 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 pt-20 font-sans">
+
+  <body>
     <!-- Navbar -->
     <nav
       class="bg-primary fixed top-0 left-0 right-0 w-full z-50 px-4 py-2 shadow-md"
@@ -83,15 +84,17 @@
     </nav>
 
     <!-- Content -->
-    <main class="max-w-7xl mx-auto px-4 mt-8 mb-20">
+    <main class="max-w-7xl mx-auto px-4 mt-20 mb-20">
       <div class="bg-white shadow-sm rounded-lg p-6 md:p-8 overflow-x-auto">
-        <h1 class="text-2xl font-bold mb-6 text-center text-gray-700">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-700</h1>">
           Adult ADHD Self-Report
         </h1>
         <form action="#" method="post">
           <table class="min-w-full text-sm text-left border-collapse">
             <thead class="sticky top-0 bg-gray-100 z-10">
               <tr>
+                <th class="p-3 text-lg text-center">S.No.</th>
+                <!-- New Column -->
                 <th class="p-3 text-lg text-center">Question</th>
                 <th class="p-3 text-lg text-center">Never</th>
                 <th class="p-3 text-lg text-center">Rarely</th>
@@ -100,22 +103,22 @@
                 <th class="p-3 text-lg text-center whitespace-nowrap">
                   Very Often
                 </th>
-                <th class="p-3 text-lg text-center">[lorem]</th>
+                <th class="p-3 text-lg text-center">Info</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Question 1 -->
-              <tr>
-                <td class="p-3 text-lg font-medium">
-                  1. How often do you have trouble wrapping up the final details
-                  of a project, once the challenging parts have been done?
-                </td>
+              <!-- Template Row -->
+              <tr id="question-row-template" class="hidden">
+                <td class="p-3 text-lg font-medium text-center" id="sno"></td>
+                <!-- S.No. -->
+                <td class="p-3 text-lg font-medium" id="question-text"></td>
+                <!-- Question Text -->
                 <td class="text-center">
                   <label class="radio-container">
                     <input
                       type="radio"
                       name="question1"
-                      value="Never"
+                      value=""
                       class="hidden"
                     />
                     <span class="custom-radio"></span>
@@ -126,7 +129,7 @@
                     <input
                       type="radio"
                       name="question1"
-                      value="Rarely"
+                      value=""
                       class="hidden"
                     />
                     <span class="custom-radio"></span>
@@ -137,7 +140,7 @@
                     <input
                       type="radio"
                       name="question1"
-                      value="Sometimes"
+                      value=""
                       class="hidden"
                     />
                     <span class="custom-radio"></span>
@@ -148,7 +151,7 @@
                     <input
                       type="radio"
                       name="question1"
-                      value="Often"
+                      value=""
                       class="hidden"
                     />
                     <span class="custom-radio"></span>
@@ -159,7 +162,7 @@
                     <input
                       type="radio"
                       name="question1"
-                      value="Very Often"
+                      value=""
                       class="hidden"
                     />
                     <span class="custom-radio"></span>
@@ -175,156 +178,6 @@
                   </button>
                 </td>
               </tr>
-
-              <!-- Question 2 -->
-              <tr>
-                <td class="p-3 text-lg font-medium">
-                  2. How often do you have difficulty getting things in order
-                  when you have to do a task that requires organisation?
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question2"
-                      value="Never"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question2"
-                      value="Rarely"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question2"
-                      value="Sometimes"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question2"
-                      value="Often"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question2"
-                      value="Very Often"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <button
-                    type="button"
-                    class="text-lg font-medium bg-primary text-secondary rounded-md px-4 py-1 question-btn hover:bg-secondary hover:text-primary transition"
-                    data-question-id="2"
-                  >
-                    Click
-                  </button>
-                </td>
-              </tr>
-
-              <!-- Question 3 -->
-              <tr>
-                <td class="p-3 text-lg font-medium">
-                  3. How often do you have problems remembering appointments or
-                  obligations?
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question3"
-                      value="Never"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question3"
-                      value="Rarely"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question3"
-                      value="Sometimes"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question3"
-                      value="Often"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <label class="radio-container">
-                    <input
-                      type="radio"
-                      name="question3"
-                      value="Very Often"
-                      class="hidden"
-                    />
-                    <span class="custom-radio"></span>
-                  </label>
-                </td>
-                <td class="text-center">
-                  <button
-                    type="button"
-                    class="text-lg font-medium bg-primary text-secondary rounded-md px-4 py-1 question-btn hover:bg-secondary hover:text-primary transition"
-                    data-question-id="3"
-                  >
-                    Click
-                  </button>
-                </td>
-              </tr>
-
-              <!-- Questions 4-18 follow the same pattern -->
-              <!-- For brevity, showing only questions 1-3 with the new style -->
-
-              <!-- Rest of the questions with the same pattern -->
-              <!-- ... -->
             </tbody>
           </table>
 
@@ -342,9 +195,9 @@
     </main>
 
     <!-- Modal for question responses -->
-    <div
+    <!-- <div
       id="responseModal"
-      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
     >
       <div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full">
         <h3 class="text-xl font-bold mb-2">Response</h3>
@@ -360,62 +213,110 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script>
-      // JavaScript to handle the modal and button clicks
       document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("responseModal");
-        const modalContent = document.getElementById("modalContent");
-        const closeModal = document.getElementById("closeModal");
-        const questionBtns = document.querySelectorAll(".question-btn");
+        // Fetch the JSON file
+        fetch("../static/questions.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const questionContainer = document.querySelector("tbody");
+            const templateRow = document.getElementById(
+              "question-row-template"
+            );
 
-        // Close modal when close button is clicked
-        closeModal.addEventListener("click", function () {
-          modal.classList.add("hidden");
-        });
+            // Iterate through each question in the JSON
+            data.questions.forEach((question) => {
+              // Clone the template row
+              const newRow = templateRow.cloneNode(true);
+              newRow.removeAttribute("id"); // Remove the ID since it's a template
+              newRow.classList.remove("hidden"); // Make the row visible
 
-        // Handle click on question buttons
-        questionBtns.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const questionId = this.getAttribute("data-question-id");
+              // Populate the S.No.
+              const snoElement = newRow.querySelector("#sno");
+              snoElement.textContent = question.id;
+
+              // Populate the question text
+              const questionTextElement =
+                newRow.querySelector("#question-text");
+              questionTextElement.textContent = question.text;
+
+              // Populate the radio buttons with options
+              const radioButtons = newRow.querySelectorAll(
+                'input[type="radio"]'
+              );
+              radioButtons.forEach((radio, index) => {
+                radio.value = question.options[index];
+                radio.name = `question${question.id}`;
+              });
+
+              // Update the button's data-question-id attribute
+              const button = newRow.querySelector(".question-btn");
+              button.setAttribute("data-question-id", question.id);
+
+              // Append the new row to the container
+              questionContainer.appendChild(newRow);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching questions:", error);
+            alert("Failed to load questions. Please try again.");
+          });
+
+        // Add event listeners for question buttons
+        document.addEventListener("click", function (event) {
+          if (event.target.matches(".question-btn")) {
+            const questionId = event.target.getAttribute("data-question-id");
             const questionName = `question${questionId}`;
             const selectedValue =
               document.querySelector(`input[name="${questionName}"]:checked`)
                 ?.value || "No selection";
 
-            // Send to backend (simulated)
-            fetch("/api/question-response", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                questionId: questionId,
-                response: selectedValue,
-              }),
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                // Display response in modal
-                modalContent.textContent = `Question ${questionId}: Your selection "${selectedValue}" has been recorded. ${
-                  data.message || ""
-                }`;
-                modal.classList.remove("hidden");
-              })
-              .catch((error) => {
-                modalContent.textContent = `Error submitting response for Question ${questionId}: ${error.message}`;
-                modal.classList.remove("hidden");
-              });
-          });
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener("click", function (event) {
-          if (event.target === modal) {
-            modal.classList.add("hidden");
+            // Since modal is commented out, just show an alert instead
+            alert(
+              `Question ${questionId}: Your selection "${selectedValue}" has been recorded.`
+            );
           }
         });
+
+        /* Uncomment this section if you want to use the modal instead of alerts
+        // Modal functionality 
+        const modal = document.getElementById("responseModal");
+        const modalContent = document.getElementById("modalContent");
+        const closeModal = document.getElementById("closeModal");
+        
+        // Close modal when close button is clicked
+        if (closeModal) {
+          closeModal.addEventListener("click", function () {
+            modal.classList.add("hidden");
+          });
+        }
+        
+        // Handle click on question buttons
+        document.addEventListener('click', function(event) {
+          if (event.target.matches('.question-btn') && modal && modalContent) {
+            const questionId = event.target.getAttribute("data-question-id");
+            const questionName = `question${questionId}`;
+            const selectedValue =
+              document.querySelector(`input[name="${questionName}"]:checked`)
+                ?.value || "No selection";
+    
+            // Display response in modal
+            modalContent.textContent = `Question ${questionId}: Your selection "${selectedValue}" has been recorded.`;
+            modal.classList.remove("hidden");
+          }
+        });
+    
+        // Close modal when clicking outside
+        if (modal) {
+          window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+              modal.classList.add("hidden");
+            }
+          });
+        }
+        */
       });
     </script>
   </body>

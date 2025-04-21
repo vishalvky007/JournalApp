@@ -12,10 +12,10 @@
       class="bg-primary fixed top-0 left-0 right-0 w-full z-50 px-4 py-2 shadow-md"
     >
       <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
-        <span class="text-secondary font-bold text-xl">[AppName]</span>
+        <span class="text-secondary font-bold text-xl">ADHD Self-Report</span>
         <a
           id="login-btn"
-          class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md border-2 border-secondary text-secondary hover:bg-secondary hover:text-primary transition"
+          class="auth-toggle-btn px-6 py-2 rounded-md font-semibold text-md border-2 border-secondary text-primary bg-secondary hover:bg-secondary hover:text-primary transition"
           href="./index.html"
         >
           Back to Home
@@ -36,24 +36,24 @@
           </div>
 
           <!-- Card Section -->
-          <div
-            class="grid grid-cols-1 gap-6 pt-20"
-          >
+          <div class="grid grid-cols-1 gap-6 pt-10">
             <!-- Cards Container -->
             <div
               class="rounded-lg p-4 shadow-sm overflow-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 space-y-4"
             >
               <!-- Day Cards -->
               <div
-                class="journal-card p-4 rounded-lg bg-primary text-secondary transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer w-[50%]"
+                class="journal-card p-4 rounded-lg bg-primary text-secondary transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer flex justify-between"
                 onclick="showEntryModal('Day 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, cupiditate')"
               >
-                <h3 class="font-bold text-2xl">Day 1</h3>
-                <p class="text-secondary text-sm">April 10, 2025</p>
-                <p class="text-gray-100 mt-2 line-clamp-2">
-                  Today was my first day trying to establish a new morning
-                  routine...
-                </p>
+                <div class="flex-1 pr-4">
+                  <h3 class="font-bold text-2xl">Day 1</h3>
+                  <p class="text-secondary text-sm">April 10, 2025</p>
+                  <p class="text-gray-100 mt-2 line-clamp-2">
+                    Today was my first day trying to establish a new morning
+                    routine...
+                  </p>
+                </div>
               </div>
 
               <!-- Repeat Day Cards if needed -->
@@ -85,7 +85,7 @@
               <div class="flex justify-center pt-4">
                 <button
                   type="button"
-                  onclick="document.getElementById('addNewModal').classList.remove('hidden')"
+                  onclick="document.getElementById('addNewModal').classList.remove('hidden'); document.getElementById('addNewModal').classList.add('flex')"
                   class="bg-primary text-secondary px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition hover:scale-105 font-semibold"
                 >
                   + Add New
@@ -100,9 +100,9 @@
     <!-- Add Entry Modal -->
     <div
       id="addNewModal"
-      class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm items-center justify-center z-50 hidden"
     >
-      <div class="bg-white rounded-xl shadow-lg p-6 w-11/12 max-w-md">
+      <div class="bg-white rounded-xl shadow-lg p-6 w-[50%]">
         <h2 class="text-xl font-bold mb-4">Add New Entry</h2>
 
         <textarea
@@ -113,7 +113,8 @@
 
         <button
           type="button"
-          class="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded text-sm font-medium mb-4"
+          onclick="startSpeechRecognition()"
+          class="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 px-3 py-2 rounded text-sm font-semibold mb-4"
         >
           🎤 Use Microphone
         </button>
@@ -121,7 +122,7 @@
         <div class="flex justify-end gap-2">
           <button
             type="button"
-            onclick="document.getElementById('addNewModal').classList.add('hidden')"
+            onclick="document.getElementById('addNewModal').classList.add('hidden'); document.getElementById('addNewModal').classList.remove('flex')"
             class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 text-sm font-medium"
           >
             Cancel
@@ -139,14 +140,14 @@
     <!-- Entry View Modal -->
     <div
       id="entryViewModal"
-      class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm items-center justify-center z-50 hidden"
     >
-      <div class="bg-white rounded-xl shadow-lg p-6 w-[90%]">
+      <div class="bg-white rounded-xl shadow-lg p-6 w-[50%] h-[50%]">
         <div class="flex justify-between items-center mb-4">
           <h2 id="entryTitle" class="text-xl font-bold">Entry Title</h2>
           <button
             type="button"
-            onclick="document.getElementById('entryViewModal').classList.add('hidden')"
+            onclick="document.getElementById('entryViewModal').classList.add('hidden'); document.getElementById('entryViewModal').classList.remove('flex')"
             class="text-gray-500 hover:text-gray-700"
           >
             <svg
@@ -194,7 +195,55 @@
       function showEntryModal(title, content) {
         document.getElementById("entryTitle").textContent = title;
         document.getElementById("entryContent").textContent = content;
-        document.getElementById("entryViewModal").classList.remove("hidden");
+        const modal = document.getElementById("entryViewModal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+    </script>
+
+    <script>
+      function startSpeechRecognition() {
+        // Check for browser support
+        const SpeechRecognition =
+          window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+          alert("Your browser does not support Speech Recognition.");
+          return;
+        }
+
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false; // Set to true if you want continuous results
+        recognition.interimResults = false;
+        recognition.lang = "en-US";
+
+        // Select the textarea using its placeholder attribute
+        const textarea = document.querySelector(
+          'textarea[placeholder="Type your journal entry..."]'
+        );
+        if (!textarea) {
+          console.error("Textarea not found.");
+          return;
+        }
+
+        recognition.onstart = () => {
+          console.log("Speech recognition started. Please speak.");
+        };
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          textarea.value = transcript;
+          console.log("Transcribed text:", transcript);
+        };
+
+        recognition.onerror = (event) => {
+          console.error("Speech recognition error:", event.error);
+        };
+
+        recognition.onend = () => {
+          console.log("Speech recognition ended.");
+        };
+
+        recognition.start();
       }
     </script>
   </body>
